@@ -1,4 +1,4 @@
-# Used for kaggel dataset import
+# Used for kaggle dataset import
 
 # Removing spaces: File names such as 101.1 App_M.bmp will be changed to 101.1_App_M.bmp (spaces are replaced by underscores).
 # Removing strange symbols: Characters such as ä, ü, or quotation marks, which often cause confusion for Python libraries will be removed.
