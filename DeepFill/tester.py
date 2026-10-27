@@ -25,8 +25,7 @@ def WGAN_tester(opt):
     # Kaggle purpose
     def load_model_generator(net, epoch, opt):
         model_name = 'deepfillv2_WGAN_G_epoch%d_batchsize%d.pth' % (epoch, 4)
-        current_dir = os.path.dirname(os.path.abspath(__file__))
-        model_name = os.path.join(current_dir, 'pretrained_model', model_name)
+        model_name = f'/kaggle/working/pediatric-fusion/DeepFill/pretrained_model/{model_name}'
         pretrained_dict = torch.load(model_name)
         generator.load_state_dict(pretrained_dict)
 
