@@ -1,10 +1,16 @@
+# Used for kaggel dataset import
+
+# Removing spaces: File names such as 101.1 App_M.bmp will be changed to 101.1_App_M.bmp (spaces are replaced by underscores).
+# Removing strange symbols: Characters such as ä, ü, or quotation marks, which often cause confusion for Python libraries will be removed.
+# Removing the leading folder name: If the ZIP file contains a folder such as US_Pictures/ or US_Pictures_kaggle_ready/, this code will strip that folder name.
+
+# Run through "python fix_zip.py"
+
 import zipfile
 import re
-import os
 
 INPUT_ZIP = "US_Pictures.zip"
 OUTPUT_ZIP = "US_Pictures_kaggle_ready.zip"
-
 
 def clean_filename(filename):
     filename = filename.strip()
@@ -18,8 +24,7 @@ def clean_filename(filename):
 
     return filename
 
-
-print("Memproses zip...")
+print("Processing zip...")
 with zipfile.ZipFile(INPUT_ZIP, "r") as zin:
     with zipfile.ZipFile(OUTPUT_ZIP, "w", zipfile.ZIP_DEFLATED) as zout:
         for item in zin.infolist():
@@ -34,4 +39,4 @@ with zipfile.ZipFile(INPUT_ZIP, "r") as zin:
             with zin.open(item) as f:
                 zout.writestr(new_name, f.read())
 
-print(f"Selesai! File bersih tersimpan sebagai: {OUTPUT_ZIP}")
+print(f"Done! The clean file is saved as: {OUTPUT_ZIP}")
