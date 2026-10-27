@@ -15,10 +15,18 @@ from .utils import *
 
 def WGAN_tester(opt):
     results_path = opt.results_path
-    # Save the model if pre_train == True
+    # # Save the model if pre_train == True
+    # def load_model_generator(net, epoch, opt):
+    #     model_name = 'deepfillv2_WGAN_G_epoch%d_batchsize%d.pth' % (epoch, 4)
+    #     model_name = os.path.join('../DeepFill', 'pretrained_model', model_name)
+    #     pretrained_dict = torch.load(model_name)
+    #     generator.load_state_dict(pretrained_dict)
+
+    # Kaggle purpose
     def load_model_generator(net, epoch, opt):
         model_name = 'deepfillv2_WGAN_G_epoch%d_batchsize%d.pth' % (epoch, 4)
-        model_name = os.path.join('../DeepFill', 'pretrained_model', model_name)
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        model_name = os.path.join(current_dir, 'pretrained_model', model_name)
         pretrained_dict = torch.load(model_name)
         generator.load_state_dict(pretrained_dict)
 
