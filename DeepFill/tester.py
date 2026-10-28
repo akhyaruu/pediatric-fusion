@@ -26,7 +26,9 @@ def WGAN_tester(opt):
     def load_model_generator(net, epoch, opt):
         model_name = 'deepfillv2_WGAN_G_epoch%d_batchsize%d.pth' % (epoch, 4)
         model_name = f'/kaggle/working/pediatric-fusion/DeepFill/pretrained_model/{model_name}'
-        pretrained_dict = torch.load(model_name)
+        # pretrained_dict = torch.load(model_name)
+        device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        pretrained_dict = torch.load(model_name, map_location=device)
         generator.load_state_dict(pretrained_dict)
 
     # ----------------------------------------
