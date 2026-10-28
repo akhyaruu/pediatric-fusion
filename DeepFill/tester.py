@@ -46,7 +46,9 @@ def WGAN_tester(opt):
     print('-------------------------Pretrained Model Loaded-------------------------')
 
     # To device
-    generator = generator.cuda()
+    # generator = generator.cuda()
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    generator = generator.to(device)
     
     # ----------------------------------------
     #       Initialize training dataset
