@@ -12,11 +12,46 @@ import os
 # List of the feature names to retrieve from the table
 TABULAR_FEATURES = [
     "Age",
+    # "Sex",
     "Height",
     "Weight",
     "BMI",
     "Alvarado_Score",
     "Paedriatic_Appendicitis_Score",
+    # "Peritonitis",
+    # "Migratory_Pain",
+    # "Lower_Right_Abd_Pain",
+    # "Contralateral_Rebound_Tenderness",
+    # "Coughing_Pain",
+    # "Psoas_Sign",
+    # "Nausea",
+    # "Loss_of_Appetite",
+    # "Body_Temperature",
+    # "Dysuria",
+    # "Stool",
+    # "WBC_Count",
+    # "Neutrophil_Percentage",
+    # "CRP",
+    # "Ketones_in_Urine",
+    # "RBC_in_Urine",
+    # "WBC_in_Urine",
+    # "Appendix_on_US",
+    # "Appendix_Diameter",
+    # "Free_Fluids",
+    # "Appendix_Wall_Layers",
+    # "Target_Sign",
+    # "Perfusion",
+    # "Perforation",
+    # "Surrounding_Tissue_Reaction",
+    # "Pathological_Lymph_Nodes",
+    # "Bowel_Wall_Thickening",
+    # "Ileus",
+    # "Coprostasis",
+    # "Meteorism",
+    # "Enteritis",
+    # "Appendicular_Abscess",
+    # "Conglomerate_of_Bowel_Loops",
+    # "Gynecological_Findings",
 ]
 
 
@@ -256,6 +291,7 @@ def generate_files(config):
         features = patient_info[patient_info["US_Number"].values == patient_code[0]][
             TABULAR_FEATURES
         ].iloc[[idx_keep]]
+        features = update_feature_values(features)
         concepts = features[config["concepts"]]
         images_total += len(images)
         mapping[img_code] = [
