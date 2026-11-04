@@ -256,7 +256,6 @@ def generate_files(config):
         features = patient_info[patient_info["US_Number"].values == patient_code[0]][
             TABULAR_FEATURES
         ].iloc[[idx_keep]]
-        # features = update_feature_values(features)
         concepts = features[config["concepts"]]
         images_total += len(images)
         mapping[img_code] = [
