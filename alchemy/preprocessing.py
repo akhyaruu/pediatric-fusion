@@ -132,8 +132,7 @@ def crop_image(
 
     cropped = np.copy(img[i_top:i_bottom, j_left:j_right])
 
-    # Either resize the cropped image to the output size by interpolation
-    # or pad the output image by black pixels
+    # Either resize the cropped image to the output size by interpolation or pad the output image by black pixels
     if padding == "resize":
         output = cv2.resize(cropped, output_size)
     elif padding in ["constant", "reflect"]:
