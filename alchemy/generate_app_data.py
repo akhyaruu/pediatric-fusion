@@ -114,95 +114,95 @@ def update_feature_values(features):
     @param features: pandas data frame with the pediatric appendicitis data
     @return: pandas data frame with dichotomised and partially imputed feature values
     """
-    features["Sex"] = features["Sex"].replace(["male", "female", "no"], [1, 0, np.nan])
-    features["Peritonitis"] = features["Peritonitis"].replace(
-        ["generalized", "local", "no"], [1, 1, 0]
-    )
-    features["Migratory_Pain"] = features["Migratory_Pain"].replace(
-        ["yes", "no"], [1, 0]
-    )
-    features["Lower_Right_Abd_Pain"] = features["Lower_Right_Abd_Pain"].replace(
-        ["yes", "no"], [1, 0]
-    )
-    features["Contralateral_Rebound_Tenderness"] = features[
-        "Contralateral_Rebound_Tenderness"
-    ].replace(["yes", "no"], [1, 0])
-    features["Coughing_Pain"] = features["Coughing_Pain"].replace(["yes", "no"], [1, 0])
-    features["Psoas_Sign"] = features["Psoas_Sign"].replace(["yes", "no"], [1, 0])
-    features["Nausea"] = features["Nausea"].replace(["yes", "no"], [1, 0])
-    features["Loss_of_Appetite"] = features["Loss_of_Appetite"].replace(
-        ["yes", "no"], [1, 0]
-    )
-    features["Dysuria"] = features["Dysuria"].replace(["yes", "no"], [1, 0])
-    features["Stool"] = features["Stool"].replace(
-        ["diarrhea", "normal", "constipation", "constipation, diarrhea", "no"],
-        [1, 0, 1, 1, 0],
-    )
-    features["Ketones_in_Urine"] = features["Ketones_in_Urine"].replace(
-        ["+", "++", "+++", "no"], [1, 1, 1, 0]
-    )
-    features["RBC_in_Urine"] = features["RBC_in_Urine"].replace(
-        ["+", "++", "+++", "no"], [1, 1, 1, 0]
-    )
-    features["WBC_in_Urine"] = features["WBC_in_Urine"].replace(
-        ["+", "++", "+++", "no"], [1, 1, 1, 0]
-    )
-    features["Appendix_on_US"] = features["Appendix_on_US"].replace(
-        ["yes", "no"], [1, 0]
-    )
-    features["Free_Fluids"] = features["Free_Fluids"].replace(["yes", "no"], [1, 0])
-    features["Appendix_Wall_Layers"] = features["Appendix_Wall_Layers"].replace(
-        ["raised", "partially raised", "upset", "intact", "no"], [1, 1, 1, 0, 0]
-    )
-    features["Target_Sign"] = features["Target_Sign"].replace(["yes", "no"], [1, 0])
-    features["Perfusion"] = features["Perfusion"].replace(
-        ["hyperperfused", "hypoperfused", "no", "present"], [1, 0, 0, 1]
-    )
-    features["Perforation"] = features["Perforation"].replace(
-        ["no", "yes", "not excluded", "suspected"], [0, 1, np.nan, 1]
-    )
-    features["Surrounding_Tissue_Reaction"] = features[
-        "Surrounding_Tissue_Reaction"
-    ].replace(["yes", "no"], [1, 0])
-    features["Pathological_Lymph_Nodes"] = features["Pathological_Lymph_Nodes"].replace(
-        ["yes", "no"], [1, 0]
-    )
-    features["Bowel_Wall_Thickening"] = features["Bowel_Wall_Thickening"].replace(
-        ["yes", "no"], [1, 0]
-    )
-    features["Ileus"] = features["Ileus"].replace(["yes", "no"], [1, 0])
-    features["Coprostasis"] = features["Coprostasis"].replace(["yes", "no"], [1, 0])
-    features["Meteorism"] = features["Meteorism"].replace(["yes", "no"], [1, 0])
-    features["Enteritis"] = features["Enteritis"].replace(["yes", "no"], [1, 0])
-    features["Appendicular_Abscess"] = features["Appendicular_Abscess"].replace(
-        ["yes", "no", "suspected"], [1, 0, 1]
-    )
-    features["Conglomerate_of_Bowel_Loops"] = features[
-        "Conglomerate_of_Bowel_Loops"
-    ].replace(["yes", "no"], [1, 0])
-    features["Gynecological_Findings"] = features["Gynecological_Findings"].replace(
-        [
-            "Ausschluss gyn. Ursache der Beschwerden",
-            "Ausschluss Ovarialtorsion",
-            "Ausschluss Ovarialzyste",
-            "Ausschluss pathologischer Ovarialbefund",
-            "In beiden Ovarien Zysten darstellbar, links Ovar mit regelrechter Perfusion, rechts etwas vergrößert, keine eindeutige Perfusion nachweisbar. Retrovesikal freie Flüssigkeit mit Binnenecho",
-            "ja",
-            "kein Anhalt für eine gynäkologische Ursache der Beschwerden",
-            "kein sicherer Ausschluss einer Ovarialtorsion, Appendizitis wahrscheinlicher",
-            "keine",
-            "kleine Ovarzyste rechts",
-            "Ovar links vergrößert",
-            "Ovarialzyste",
-            "Ovarialzyste ",
-            "Ovarialzyste re.",
-            "Ovarialzysten",
-            "unauffällig",
-            "V. a. Ovarialtorsion",
-            "Zyste Uterus",
-            "no",
-        ],
-        [1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, np.nan, 1, 1, 0],
+    # features["Sex"] = features["Sex"].replace(["male", "female", "no"], [1, 0, np.nan])
+    # features["Peritonitis"] = features["Peritonitis"].replace(
+    #     ["generalized", "local", "no"], [1, 1, 0]
+    # )
+    # features["Migratory_Pain"] = features["Migratory_Pain"].replace(
+    #     ["yes", "no"], [1, 0]
+    # )
+    # features["Lower_Right_Abd_Pain"] = features["Lower_Right_Abd_Pain"].replace(
+    #     ["yes", "no"], [1, 0]
+    # )
+    # features["Contralateral_Rebound_Tenderness"] = features[
+    #     "Contralateral_Rebound_Tenderness"
+    # ].replace(["yes", "no"], [1, 0])
+    # features["Coughing_Pain"] = features["Coughing_Pain"].replace(["yes", "no"], [1, 0])
+    # features["Psoas_Sign"] = features["Psoas_Sign"].replace(["yes", "no"], [1, 0])
+    # features["Nausea"] = features["Nausea"].replace(["yes", "no"], [1, 0])
+    # features["Loss_of_Appetite"] = features["Loss_of_Appetite"].replace(
+    #     ["yes", "no"], [1, 0]
+    # )
+    # features["Dysuria"] = features["Dysuria"].replace(["yes", "no"], [1, 0])
+    # features["Stool"] = features["Stool"].replace(
+    #     ["diarrhea", "normal", "constipation", "constipation, diarrhea", "no"],
+    #     [1, 0, 1, 1, 0],
+    # )
+    # features["Ketones_in_Urine"] = features["Ketones_in_Urine"].replace(
+    #     ["+", "++", "+++", "no"], [1, 1, 1, 0]
+    # )
+    # features["RBC_in_Urine"] = features["RBC_in_Urine"].replace(
+    #     ["+", "++", "+++", "no"], [1, 1, 1, 0]
+    # )
+    # features["WBC_in_Urine"] = features["WBC_in_Urine"].replace(
+    #     ["+", "++", "+++", "no"], [1, 1, 1, 0]
+    # )
+    # features["Appendix_on_US"] = features["Appendix_on_US"].replace(
+    #     ["yes", "no"], [1, 0]
+    # )
+    # features["Free_Fluids"] = features["Free_Fluids"].replace(["yes", "no"], [1, 0])
+    # features["Appendix_Wall_Layers"] = features["Appendix_Wall_Layers"].replace(
+    #     ["raised", "partially raised", "upset", "intact", "no"], [1, 1, 1, 0, 0]
+    # )
+    # features["Target_Sign"] = features["Target_Sign"].replace(["yes", "no"], [1, 0])
+    # features["Perfusion"] = features["Perfusion"].replace(
+    #     ["hyperperfused", "hypoperfused", "no", "present"], [1, 0, 0, 1]
+    # )
+    # features["Perforation"] = features["Perforation"].replace(
+    #     ["no", "yes", "not excluded", "suspected"], [0, 1, np.nan, 1]
+    # )
+    # features["Surrounding_Tissue_Reaction"] = features[
+    #     "Surrounding_Tissue_Reaction"
+    # ].replace(["yes", "no"], [1, 0])
+    # features["Pathological_Lymph_Nodes"] = features["Pathological_Lymph_Nodes"].replace(
+    #     ["yes", "no"], [1, 0]
+    # )
+    # features["Bowel_Wall_Thickening"] = features["Bowel_Wall_Thickening"].replace(
+    #     ["yes", "no"], [1, 0]
+    # )
+    # features["Ileus"] = features["Ileus"].replace(["yes", "no"], [1, 0])
+    # features["Coprostasis"] = features["Coprostasis"].replace(["yes", "no"], [1, 0])
+    # features["Meteorism"] = features["Meteorism"].replace(["yes", "no"], [1, 0])
+    # features["Enteritis"] = features["Enteritis"].replace(["yes", "no"], [1, 0])
+    # features["Appendicular_Abscess"] = features["Appendicular_Abscess"].replace(
+    #     ["yes", "no", "suspected"], [1, 0, 1]
+    # )
+    # features["Conglomerate_of_Bowel_Loops"] = features[
+    #     "Conglomerate_of_Bowel_Loops"
+    # ].replace(["yes", "no"], [1, 0])
+    # features["Gynecological_Findings"] = features["Gynecological_Findings"].replace(
+    #     [
+    #         "Ausschluss gyn. Ursache der Beschwerden",
+    #         "Ausschluss Ovarialtorsion",
+    #         "Ausschluss Ovarialzyste",
+    #         "Ausschluss pathologischer Ovarialbefund",
+    #         "In beiden Ovarien Zysten darstellbar, links Ovar mit regelrechter Perfusion, rechts etwas vergrößert, keine eindeutige Perfusion nachweisbar. Retrovesikal freie Flüssigkeit mit Binnenecho",
+    #         "ja",
+    #         "kein Anhalt für eine gynäkologische Ursache der Beschwerden",
+    #         "kein sicherer Ausschluss einer Ovarialtorsion, Appendizitis wahrscheinlicher",
+    #         "keine",
+    #         "kleine Ovarzyste rechts",
+    #         "Ovar links vergrößert",
+    #         "Ovarialzyste",
+    #         "Ovarialzyste ",
+    #         "Ovarialzyste re.",
+    #         "Ovarialzysten",
+    #         "unauffällig",
+    #         "V. a. Ovarialtorsion",
+    #         "Zyste Uterus",
+    #         "no",
+    #     ],
+    #     [1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, np.nan, 1, 1, 0],
     )
 
     # For the US variables update NaN with negative findings
